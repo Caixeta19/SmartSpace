@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Salas Disponíveis</h1>
+    
+    <div class="salas-grid">
+        {% for sala in salas %}
+        <div class="sala-card">
+            <div class="sala-header">
+                <h3>{{ sala.nome }}</h3>
+            </div>
+            <div class="sala-body">
+                <p><i class="fas fa-users"></i> Capacidade: {{ sala.capacidade }} pessoas</p>
+                <a href="{% url 'detalhes_sala' sala.id %}" class="btn btn-primary">Ver detalhes</a>
+            </div>
+        </div>
+        {% endfor %}
+        {%endblock %}
+    </div>
+</div>
