@@ -14,19 +14,23 @@ def listar_salas(request):
 def detalhes_sala(request, sala_id):
     sala = get_object_or_404(Sala, id=sala_id)
     agendamentos = sala.agendamento_set.all()  # Agendamentos relacionados à sala
-    return render(request, 'salas/detalhes_sala.html', {'sala': sala, 'agendamentos': agendamentos})
+    return render(request, 'salas/agendar_sala.html', {'sala': sala, 'agendamentos': agendamentos})
 
 @login_required
-def agendar_sala(request):
+def agendar_sala(request, id):
+    sala = get_object_or_404(Sala, id=id)  # Buscar a sala pelo ID
+
     if request.method == 'POST':
         form = AgendamentoForm(request.POST)
         if form.is_valid():
-            form.save()  # Salva o agendamento no banco
+            agendamento = form.save(commit=False)
+            agendamento.sala = sala  # Associar o agendamento à sala
+            agendamento.save()  # Salvar o agendamento no banco de dados
             return redirect('listar_salas')  # Redireciona para a lista de salas
     else:
         form = AgendamentoForm()
-    return render(request, 'salas/agendar_sala.html', {'form': form})
 
+    return render(request, 'salas/agendar_sala.html', {'form': form, 'sala': sala})
 @login_required
 def listar_agendamentos(request):
     """

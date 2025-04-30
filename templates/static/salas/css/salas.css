@@ -35,23 +35,50 @@ nav ul li {
     font-size: 28px;
     background: none;
     border: none;
-    color: #333;
+    color: white;
     cursor: pointer;
     padding: 10px;
+    display: none; /* Escondido por padrão */
 }
 
+/* Botões de navegação */
 nav ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 0.8rem 1rem;
     color: white;
     text-decoration: none;
     border-radius: 6px;
     transition: background 0.3s ease;
     font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav ul li a i {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    font-size: 1.3rem; /* Ajusta o tamanho do ícone */
 }
 
 nav ul li a:hover {
     background-color: #9d4edd;
+}
+
+/* Menu Responsivo */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+}
+
+nav ul.active {
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 /* Conteúdo Principal */
