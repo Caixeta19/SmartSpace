@@ -4,6 +4,8 @@
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Agendar</button>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-calendar-check"></i> Agendar
+</button>
 </form>
 {% endblock %}

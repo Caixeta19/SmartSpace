@@ -19,29 +19,21 @@ header {
     position: fixed;
     height: 100%;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 nav ul li {
     margin-bottom: 1rem;
 }
 
-.hamburger-button {
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    display: none; /* Escondido por padrão */
-}
-
-/* Botões de navegação */
 nav ul li a {
     display: flex;
     align-items: center;
@@ -55,25 +47,48 @@ nav ul li a {
 }
 
 nav ul li a i {
-    margin-right: 10px; /* Espaço entre o ícone e o texto */
-    font-size: 1.3rem; /* Ajusta o tamanho do ícone */
+    margin-right: 10px;
+    font-size: 1.3rem;
 }
 
 nav ul li a:hover {
     background-color: #9d4edd;
 }
 
-/* Menu Responsivo */
-nav ul {
-    display: flex;
-    flex-direction: column;
-    padding-left: 0;
+/* Estilo do botão hamburger */
+#menu-toggle {
+    font-size: 22px;
+    background-color: #ffffff;
+    color: #5a189a;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-nav ul.active {
-    display: flex;
+#menu-toggle:hover {
+    background-color: #f3e8ff;
 }
 
+/* Quando o menu estiver recolhido */
+header.fechar {
+    width: 60px;
+}
+
+header.fechar nav ul li a span {
+    display: none;
+}
+
+header.fechar nav ul li a i {
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Navbar container */
 .navbar {
     display: flex;
     flex-direction: column;
@@ -87,6 +102,11 @@ main {
     padding: 2rem;
     flex-grow: 1;
     background-color: #fdfcff;
+    transition: margin-left 0.3s ease;
+}
+
+header.fechar ~ main {
+    margin-left: 60px;
 }
 
 .container {
@@ -238,8 +258,16 @@ h1, h2, h3 {
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
-    transition: background 0.3s ease;
-    display: inline-block;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn i {
+    margin-right: 0.5rem;
 }
 
 .btn-primary {
@@ -280,8 +308,17 @@ h1, h2, h3 {
     color: white;
 }
 
-.btn i {
-    margin-right: 0.5rem;
+/* Botão Agendar */
+.btn-agendar {
+    background-color: #5a189a;
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-agendar:hover {
+    background-color: #7b2cbf;
+    border-color: #9d4edd;
+    box-shadow: 0 4px 10px rgba(123, 44, 191, 0.3);
 }
 
 /* Formulários */
@@ -316,11 +353,12 @@ form textarea {
 
 /* Tabelas */
 table {
-    width: 100%;
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
     border-collapse: collapse;
-    margin-top: 2rem;
     background: white;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
