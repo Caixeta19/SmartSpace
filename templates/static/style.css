@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #e3f2fd; /* Azul muito claro no fundo */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,7 @@ body {
 /* Contêiner de mensagens */
 .messages-container {
     position: absolute;
-    top: -60px; /* Posiciona acima do formulário */
+    top: -60px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -106,18 +106,18 @@ body {
 h1 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #6a1b9a; /* Roxo escuro para títulos */
+    color: #1565c0; /* Azul escuro para destaque */
 }
+
 h2 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #efeeef; /* Roxo escuro para títulos */
+    color: #fff;
 }
-
 
 span {
     font-size: 14px;
-    color: #666;
+    color: #555;
     display: block;
     margin-bottom: 20px;
 }
@@ -133,14 +133,14 @@ input {
 }
 
 input:focus {
-    border-color: #9c27b0; /* Roxo para foco nos inputs */
+    border-color: #64b5f6; /* Azul claro suave */
     outline: none;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #9c27b0; /* Roxo para botões */
+    background-color: #42a5f5; /* Azul principal */
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -150,7 +150,7 @@ button {
 }
 
 button:hover {
-    background-color: #7b1fa2; /* Roxo mais escuro no hover */
+    background-color: #1e88e5; /* Azul escuro no hover */
 }
 
 /* Painel de alternância */
@@ -169,7 +169,7 @@ button:hover {
     position: relative;
     width: 200%;
     height: 100%;
-    background: linear-gradient(to right, #9c27b0, #7b1fa2); /* Gradiente roxo */
+    background: linear-gradient(to right, #42a5f5, #154976);
     color: #fff;
     left: -100%;
     transition: transform 0.6s ease-in-out;
@@ -221,5 +221,5 @@ button:hover {
 
 .toggle-panel button:hover {
     background-color: #fff;
-    color: #9c27b0; /* Roxo no hover */
+    color: #42a5f5; /* Azul claro no hover */
 }

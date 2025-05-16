@@ -1,12 +1,13 @@
 <!-- Botão hamburger -->
-<button id="menu-toggle" class="menu-btn">☰</button>
+<button id="menu-toggle" class="menu-btn" onclick="toggleMenu()">☰</button>
 
+<!-- Navbar -->
 <div id="navbar" class="navbar">
     <nav>
         <ul>
-            <li><a href="{% url 'listar_salas' %}"><i class="fas fa-door-open"></i> Salas</a></li>
-            <li><a href="{% url 'listar_agendamentos' %}"><i class="fas fa-calendar-check"></i> Agendamentos</a></li>
-            <li><a href="{% url 'listar_meus_agendamentos' %}"><i class="fas fa-user-check"></i> Meus Agendamentos</a></li>
+            <li><a class="nav-link" href="{% url 'listar_salas' %}"><i class="fas fa-door-open"></i> Salas</a></li>
+            <li><a class="nav-link" href="{% url 'listar_agendamentos' %}"><i class="fas fa-calendar-check"></i> Agendamentos</a></li>
+            <li><a class="nav-link" href="{% url 'listar_meus_agendamentos' %}"><i class="fas fa-user-check"></i> Meus Agendamentos</a></li>
         </ul>
     </nav>
 </div>
