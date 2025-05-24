@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container">
     <h1>Salas Disponíveis</h1>
-    
+
     <div class="salas-grid">
         {% for sala in salas %}
         <div class="sala-card">
@@ -11,11 +12,18 @@
                 <h3>{{ sala.nome }}</h3>
             </div>
             <div class="sala-body">
-                <p><i class="fas fa-users"></i> Capacidade: {{ sala.capacidade }} pessoas</p>
+               
+                {% if sala.imagem %}
+                    <img src="{{ sala.imagem.url }}" alt="Imagem da sala {{ sala.nome }}" style="max-width: 100%; height: auto;">
+                {% else %}
+                  <img src="{% static 'salas/img/Sala 01.png' %}" alt="Imagem padrão da sala" style="max-width: 100%; height: auto;">
+
+                {% endif %}
+
                 <a href="{% url 'agendar_sala' sala.id %}" class="btn btn-primary">Agendar Sala</a>
             </div>
         </div>
         {% endfor %}
-        {%endblock %}
     </div>
 </div>
+{% endblock %}

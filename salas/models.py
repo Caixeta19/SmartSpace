@@ -5,6 +5,8 @@ from django.core.exceptions import ValidationError
 class Sala(models.Model):
     nome = models.CharField(max_length=50)
     capacidade = models.IntegerField()
+    imagem = models.ImageField(upload_to='salas_imagens/', blank=True, null=True)
+
 
     def __str__(self):
         return self.nome
