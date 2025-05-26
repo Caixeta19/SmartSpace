@@ -15,6 +15,7 @@ Interface web com páginas HTML/CSS
 Backend com Python + Django
 
 🛠️ Tecnologias Utilizadas
+
 HTML5 / CSS3
 
 JavaScript
