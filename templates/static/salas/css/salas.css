@@ -1,7 +1,7 @@
 /* Estilos Gerais */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #F0F4FF;
+    background-color: #f5f0fa;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,12 +13,12 @@ body {
 /* Header e Navegação */
 header {
     width: 200px;
-    background: linear-gradient(180deg, #1E3A8A 0%, #2563EB 100%);
+    background: linear-gradient(180deg, #7309aa 0%, #4e0869 100%);
     color: white;
     padding: 2rem 1rem;
     position: fixed;
     height: 100%;
-    box-shadow: 2px 0 8px rgba(37, 99, 235, 0.15);
+    box-shadow: 2px 0 8px rgba(115, 9, 170, 0.2);
     transition: width 0.3s ease;
 }
 
@@ -52,14 +52,14 @@ nav ul li a i {
 }
 
 nav ul li a:hover {
-    background-color: #3B82F6;
+    background-color: #8b2bc5;
 }
 
 /* Botão hamburger */
 #menu-toggle {
     font-size: 22px;
     background-color: #ffffff;
-    color: #1E3A8A;
+    color: #7309aa;
     border: none;
     border-radius: 8px;
     padding: 8px 12px;
@@ -70,7 +70,7 @@ nav ul li a:hover {
 }
 
 #menu-toggle:hover {
-    background-color: #DBEAFE;
+    background-color: #e8d8fb;
 }
 
 /* Menu recolhido */
@@ -88,7 +88,6 @@ header.fechar nav ul li a i {
     width: 100%;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     flex-direction: column;
@@ -101,7 +100,7 @@ main {
     margin-left: 200px;
     padding: 2rem;
     flex-grow: 1;
-    background-color: #F8FAFC;
+    background-color: #fdfcff;
     transition: margin-left 0.3s ease;
 }
 
@@ -116,7 +115,7 @@ header.fechar ~ main {
 
 h1, h2, h3 {
     text-align: center;
-    color: #1D4ED8;
+    color: #6d0aa9;
     margin-top: 0;
 }
 
@@ -138,11 +137,11 @@ h1, h2, h3 {
 
 .sala-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(96, 165, 250, 0.3);
+    box-shadow: 0 8px 20px rgba(128, 90, 213, 0.3);
 }
 
 .sala-header {
-    background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+    background: linear-gradient(135deg, #5e0682 0%, #8f31c3 100%);
     color: white;
     padding: 1.5rem;
     text-align: center;
@@ -165,7 +164,7 @@ h1, h2, h3 {
 }
 
 .sala-body p i {
-    color: #1E3A8A;
+    color: #7d1fae;
     margin-right: 0.5rem;
 }
 
@@ -199,14 +198,14 @@ h1, h2, h3 {
 }
 
 .agendamentos h2 {
-    border-bottom: 2px solid #BFDBFE;
+    border-bottom: 2px solid #dec7fa;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
 .agendamentos h2 i {
     margin-right: 0.5rem;
-    color: #1E3A8A;
+    color: #701486;
 }
 
 .agendamentos-lista {
@@ -216,7 +215,7 @@ h1, h2, h3 {
 }
 
 .agendamentos-lista li {
-    background: #EFF6FF;
+    background: #f5f0fc;
     padding: 1rem;
     margin-bottom: 0.5rem;
     border-radius: 6px;
@@ -226,12 +225,12 @@ h1, h2, h3 {
 }
 
 .agendamentos-lista li:hover {
-    background: #DBEAFE;
+    background: #e5d9fa;
 }
 
 .data {
     font-weight: bold;
-    color: #1E3A8A;
+    color: #7e0aa3;
 }
 
 .horario {
@@ -271,22 +270,21 @@ h1, h2, h3 {
 }
 
 .btn-primary {
-    background-color: #1E3A8A;
+    background-color: #6b10a1;
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #2563EB;
-    color: white;
+    background-color: #8a38c4;
 }
 
 .btn-success {
-    background-color: #3B82F6;
+    background-color: #9b30f2;
     color: #fff;
 }
 
 .btn-success:hover {
-    background-color: #60A5FA;
+    background-color: #7c25c1;
 }
 
 .btn-danger {
@@ -304,21 +302,20 @@ h1, h2, h3 {
 }
 
 .btn-secondary {
-    background-color: #93C5FD;
-    color: #1E3A8A;
+    background-color: #d4b2fa;
+    color: #510d7a;
 }
 
-/* Botão Agendar */
 .btn-agendar {
-    background-color: #1E3A8A;
+    background-color: #68159a;
     color: white;
     border: 2px solid transparent;
 }
 
 .btn-agendar:hover {
-    background-color: #2563EB;
-    border-color: #60A5FA;
-    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    background-color: #863fc3;
+    border-color: #68159a;
+    box-shadow: 0 4px 10px rgba(115, 9, 170, 0.3);
 }
 
 /* Formulários */
@@ -337,7 +334,7 @@ form label {
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
-    color: #1E3A8A;
+    color: #7416ab;
 }
 
 form input,
@@ -346,7 +343,7 @@ form textarea {
     width: 100%;
     padding: 0.6rem;
     margin-bottom: 1rem;
-    border: 1px solid #93C5FD;
+    border: 1px solid #8c3cc2;
     border-radius: 6px;
     font-size: 1rem;
 }
@@ -371,13 +368,13 @@ table td {
 }
 
 table th {
-    background-color: #1E3A8A;
+    background-color: #6e12a3;
     color: white;
     font-weight: bold;
 }
 
 table tr:nth-child(even) {
-    background-color: #EFF6FF;
+    background-color: #f3ebfd;
 }
 
 /* Responsividade */
@@ -429,4 +426,33 @@ table tr:nth-child(even) {
     .agendamentos-lista li span {
         margin-bottom: 0.3rem;
     }
+}
+
+/* Página de Confirmação de Exclusão */
+.confirmacao-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.confirmacao-container h1 {
+    color: #7415b1;
+    margin-bottom: 1.5rem;
+}
+
+.confirmacao-container p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.confirmacao-container form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }

@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #e3f2fd; /* Azul muito claro no fundo */
+    background-color: #f3e5f5; /* Roxo muito claro no fundo */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@ body {
 }
 
 .alert.success {
-    background-color: #d4edda;
+    background-color: #e1f5e1;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
@@ -67,9 +67,9 @@ body {
 }
 
 .alert.info {
-    background-color: #d1ecf1;
-    color: #0c5460;
-    border: 1px solid #bee5eb;
+    background-color: #e1e0f7;
+    color: #3f3d56;
+    border: 1px solid #c9c7f0;
 }
 
 .alert.warning {
@@ -106,7 +106,7 @@ body {
 h1 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #1565c0; /* Azul escuro para destaque */
+    color: #6a1b9a; /* Roxo escuro para destaque */
 }
 
 h2 {
@@ -133,14 +133,14 @@ input {
 }
 
 input:focus {
-    border-color: #64b5f6; /* Azul claro suave */
+    border-color: #ba68c8; /* Roxo claro */
     outline: none;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #42a5f5; /* Azul principal */
+    background-color: #8e24aa; /* Roxo principal */
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -150,7 +150,7 @@ button {
 }
 
 button:hover {
-    background-color: #1e88e5; /* Azul escuro no hover */
+    background-color: #6a1b9a; /* Roxo escuro no hover */
 }
 
 /* Painel de alternância */
@@ -169,7 +169,7 @@ button:hover {
     position: relative;
     width: 200%;
     height: 100%;
-    background: linear-gradient(to right, #42a5f5, #154976);
+    background: linear-gradient(to right, #ab47bc, #6a1b9a);
     color: #fff;
     left: -100%;
     transition: transform 0.6s ease-in-out;
@@ -221,5 +221,5 @@ button:hover {
 
 .toggle-panel button:hover {
     background-color: #fff;
-    color: #42a5f5; /* Azul claro no hover */
+    color: #8e24aa; /* Roxo claro no hover */
 }
