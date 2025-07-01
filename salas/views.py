@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Sala, Agendamento, User
+from .models import AgendamentoCancelado, Sala, Agendamento, User
 from .forms import AgendamentoForm
 from .models import Agendamento
 from django.contrib.auth.decorators import login_required
 from .utils import exportar_csv
+from . import views
+
 
 @login_required
 def listar_salas(request):
@@ -78,6 +80,43 @@ def excluir_agendamento(request, pk):
         agendamento.delete()
         return redirect('listar_meus_agendamentos')
     return render(request, 'salas/confirmar_exclusao.html', {'agendamento': agendamento})
+
+@login_required
+def confirmar_cancelamento(request, pk):
+    agendamento = get_object_or_404(Agendamento, pk=pk)
+
+    if request.method == "POST":
+        motivo = request.POST.get("motivo")
+        if not motivo:
+            # Se motivo não foi preenchido, você pode adicionar um erro ou mensagem aqui
+            return render(request, "salas/confirmar_exclusao.html", {
+                "agendamento": agendamento,
+                "erro": "O motivo do cancelamento é obrigatório."
+            })
+
+        cancelamento = AgendamentoCancelado.objects.create(
+            sala=agendamento.sala,
+            data=agendamento.data,
+            hora_inicio=agendamento.horario_inicio,  # veja que no modelo o campo é horario_inicio, não hora_inicio
+            hora_fim=agendamento.horario_fim,
+            motivo=motivo,
+            solicitante=request.user
+        )
+        print(f"Cancelamento criado: {cancelamento}")  # Para confirmar no console
+
+        agendamento.delete()
+        return redirect('listar_agendamentos_cancelados ')
+
+    return render(request, "salas/confirmar_exclusao.html", {"agendamento": agendamento})
+
+
+@login_required
+def listar_cancelamentos(request):
+    cancelados = AgendamentoCancelado.objects.all().order_by('-data_cancelamento')
+    return render(request, 'salas/listar_agendamentos_cancelados.html', {'cancelados': cancelados})
+
+
+
 
 @login_required
 def gerenciar_sala(request):

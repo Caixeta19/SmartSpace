@@ -1,6 +1,7 @@
 import csv
 from django.http import HttpResponse
 
+
 def exportar_csv(info, relatorio):
     colunas = info.model._meta.fields
     nomes_colunas = [colunas.name for colunas in colunas]
@@ -15,6 +16,9 @@ def exportar_csv(info, relatorio):
 
     elif relatorio == "agendamentos":
         resposta["Content-Disposition"] = "attachment; filename=agendamentos.csv"
+
+    elif relatorio == "cancelamentos":
+        resposta ["Content-Disposition"] = "attachment; filename=cancelamentos.csv"
 
     cr_csv = csv.writer(resposta, delimiter=";")
 

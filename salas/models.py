@@ -7,13 +7,13 @@ class Sala(models.Model):
     capacidade = models.IntegerField()
     imagem = models.ImageField(upload_to='salas_imagens/', blank=True, null=True)
 
-
     def __str__(self):
         return self.nome
 
+
 class Agendamento(models.Model):
     sala = models.ForeignKey('Sala', on_delete=models.CASCADE)
-    usuario = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     data = models.DateField()
     horario_inicio = models.TimeField()
     horario_fim = models.TimeField()
@@ -23,10 +23,9 @@ class Agendamento(models.Model):
         conflitos = Agendamento.objects.filter(
             sala=self.sala,
             data=self.data,
-        ).exclude(id=self.id)  # Exclui o próprio registro em edições
+        ).exclude(id=self.id)
 
         for agendamento in conflitos:
-            # Verifica se os horários se sobrepõem
             if (
                 self.horario_inicio < agendamento.horario_fim
                 and self.horario_fim > agendamento.horario_inicio
@@ -36,9 +35,19 @@ class Agendamento(models.Model):
                 )
 
     def save(self, *args, **kwargs):
-        # Garante que a validação seja chamada antes de salvar
         self.clean()
         super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.sala.nome} - {self.data} ({self.horario_inicio} - {self.horario_fim})"
+
+
+class AgendamentoCancelado(models.Model):
+    sala = models.ForeignKey(Sala, on_delete=models.CASCADE)
+    data = models.DateField()
+    hora_inicio = models.TimeField()
+    hora_fim = models.TimeField()
+    motivo = models.TextField()
+    solicitante = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    data_cancelamento = models.DateTimeField(auto_now_add=True)
+

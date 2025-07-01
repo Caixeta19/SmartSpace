@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Agendamentos Cancelados</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sala</th>
+            <th>Data</th>
+            <th>Início</th>
+            <th>Fim</th>
+            <th>Motivo</th>
+            <th>Cancelado por</th>
+            <th>Data do Cancelamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cancelado in cancelados %}
+        <tr>
+            <td>{{ cancelado.sala.nome }}</td>
+            <td>{{ cancelado.data }}</td>
+            <td>{{ cancelado.hora_inicio }}</td>
+            <td>{{ cancelado.hora_fim }}</td>
+            <td>{{ cancelado.motivo }}</td>
+            <td>{{ cancelado.solicitante.username }}</td>
+            <td>{{ cancelado.data_cancelamento }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7">Nenhum agendamento cancelado encontrado.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
