@@ -125,6 +125,10 @@ def gerenciar_sala(request):
     else:
         return redirect('homepage')
 
+from django.http import HttpResponse
+from .models import Sala, User, Agendamento, AgendamentoCancelado
+from .utils import exportar_csv
+
 @login_required(login_url='/usuarios/logar')
 def exportar_relatorio(request, relatorio):
     if request.user.groups.filter(name="equipe").exists():
@@ -136,7 +140,13 @@ def exportar_relatorio(request, relatorio):
 
         elif relatorio == "agendamentos":
             info = Agendamento.objects.all()
-        
+
+        elif relatorio == "cancelamentos":
+            info = AgendamentoCancelado.objects.all()
+
+        else:
+            return HttpResponse("Relatório não encontrado", status=404)
+
         return exportar_csv(info, relatorio)
-    else:
-        return redirect('homepage')
+
+    return redirect('homepage')
