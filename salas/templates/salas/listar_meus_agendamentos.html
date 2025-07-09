@@ -20,7 +20,7 @@
             <td>{{ agendamento.horario_fim }}</td>
             <td>
                 <a href="{% url 'editar_agendamento' agendamento.pk %}" class="btn btn-warning">Editar</a>
-                <a href="{% url 'excluir_agendamento' agendamento.pk %}" class="btn btn-danger">Excluir</a>
+                <a href="{% url 'excluir_agendamento' agendamento.pk %}" class="btn btn-danger">Cancelar</a>
             </td>
         </tr>
         {% empty %}

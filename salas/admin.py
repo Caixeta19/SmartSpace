@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sala, Agendamento
+from .models import AgendamentoCancelado, Sala, Agendamento
 
 @admin.register(Sala)
 class SalaAdmin(admin.ModelAdmin):
@@ -9,5 +9,11 @@ class SalaAdmin(admin.ModelAdmin):
 @admin.register(Agendamento)
 class AgendamentoAdmin(admin.ModelAdmin):
     list_display = ('sala', 'usuario', 'data', 'horario_inicio', 'horario_fim')
-    list_filter = ('sala', 'data')  # Filtros laterais no admin
-    search_fields = ('usuario__username', 'sala__nome')  # Busca por nome do usuário ou sala
+    list_filter = ('sala', 'data')
+    search_fields = ('usuario__username', 'sala__nome')
+    
+@admin.register(AgendamentoCancelado)
+class AgendamentoCanceladoAdmin(admin.ModelAdmin):
+    list_display = ('sala', 'data', 'hora_inicio', 'hora_fim', 'motivo', 'solicitante', 'data_cancelamento')
+    list_filter = ('sala', 'data_cancelamento')
+    search_fields = ('motivo',)

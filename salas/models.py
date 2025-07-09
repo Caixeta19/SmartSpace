@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
+
 class Sala(models.Model):
     nome = models.CharField(max_length=50)
     capacidade = models.IntegerField()
@@ -12,14 +13,13 @@ class Sala(models.Model):
 
 
 class Agendamento(models.Model):
-    sala = models.ForeignKey('Sala', on_delete=models.CASCADE)
+    sala = models.ForeignKey(Sala, on_delete=models.CASCADE)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     data = models.DateField()
     horario_inicio = models.TimeField()
     horario_fim = models.TimeField()
 
     def clean(self):
-        # Verifica conflitos de horário para a mesma sala
         conflitos = Agendamento.objects.filter(
             sala=self.sala,
             data=self.data,
@@ -51,3 +51,5 @@ class AgendamentoCancelado(models.Model):
     solicitante = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     data_cancelamento = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.sala.nome} - Cancelado em {self.data_cancelamento.strftime('%d/%m/%Y %H:%M')}"
