@@ -5,7 +5,7 @@
     <h1>Confirmar Cancelamento</h1>
     <p>Tem certeza de que deseja cancelar o agendamento da sala <strong>{{ agendamento.sala.nome }}</strong> no dia <strong>{{ agendamento.data }}</strong>?</p>
 
-    <form method="post">
+    <form method="post" action="{% url 'cancelar_agendamento' agendamento.id %}">
         {% csrf_token %}
 
         <p><strong>Horário:</strong> {{ agendamento.horario_inicio }} - {{ agendamento.horario_fim }}</p>

@@ -155,12 +155,20 @@ h1, h2, h3 {
 
 .sala-body {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza imagem, texto e botão */
+    justify-content: center;
+    gap: 1rem;
 }
 
 .sala-body p {
-    margin-bottom: 1.5rem;
     font-size: 1.1rem;
     color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 
 .sala-body p i {
@@ -346,6 +354,13 @@ form textarea {
     border: 1px solid #8c3cc2;
     border-radius: 6px;
     font-size: 1rem;
+}
+
+/* Centralizar botão do formulário */
+form button,
+form input[type="submit"] {
+    display: block;
+    margin: 1rem auto 0 auto;
 }
 
 /* Tabelas */

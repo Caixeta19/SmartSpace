@@ -10,16 +10,16 @@
         <div class="sala-card">
             <div class="sala-header">
                 <h3>{{ sala.nome }}</h3>
+                <p class="capacidade">
+                    <i class="fas fa-users"> </i> (Capacidade:  {{ sala.capacidade }} pessoas)
+                </p>
             </div>
             <div class="sala-body">
-               
                 {% if sala.imagem %}
                     <img src="{{ sala.imagem.url }}" alt="Imagem da sala {{ sala.nome }}" style="max-width: 100%; height: auto;">
                 {% else %}
-                  <img src="{% static 'salas/img/Sala 01.png' %}" alt="Imagem padrão da sala" style="max-width: 100%; height: auto;">
-
+                    <img src="{% static 'salas/img/Sala 01.png' %}" alt="Imagem padrão da sala" style="max-width: 100%; height: auto;">
                 {% endif %}
-
                 <a href="{% url 'agendar_sala' sala.id %}" class="btn btn-primary">Agendar Sala</a>
             </div>
         </div>

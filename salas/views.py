@@ -82,28 +82,31 @@ def excluir_agendamento(request, pk):
     return render(request, 'salas/confirmar_exclusao.html', {'agendamento': agendamento})
 
 @login_required
-def cancelar_agendamento(request, agendamento_id):
-    agendamento = get_object_or_404(Agendamento, pk=agendamento_id)
-    
+def cancelar_agendamento(request, pk):
+    agendamento = get_object_or_404(Agendamento, pk=pk, usuario=request.user)
+
     if request.method == 'POST':
         motivo = request.POST.get('motivo')
         if motivo:
-            # cria registro de cancelamento
+            # Cria o cancelamento
             AgendamentoCancelado.objects.create(
-                agendamento=agendamento,
+                sala=agendamento.sala,
+                data=agendamento.data,
+                hora_inicio=agendamento.horario_inicio,
+                hora_fim=agendamento.horario_fim,
                 motivo=motivo,
-                cancelado_por=request.user,
+                solicitante=request.user,
             )
-            # opcional: remover ou marcar o agendamento como cancelado
-            agendamento.delete()
-            return redirect('listar_agendamentos_cancelados')
-    
+            agendamento.delete()  # Deleta o agendamento original
+            return redirect('agendamentos_cancelados')
+
+    # Renderiza a página de confirmação se for GET
     return render(request, 'salas/confirmar_exclusao.html', {'agendamento': agendamento})
 
 @login_required
 def listar_agendamentos_cancelados(request):
-    cancelamentos = AgendamentoCancelado.objects.select_related('agendamento', 'cancelado_por', 'agendamento__sala').all()
-    return render(request, 'salas/listar_agendamentos_cancelados.html', {'cancelamentos': cancelamentos})
+    cancelados = AgendamentoCancelado.objects.select_related('sala', 'solicitante').order_by('-data_cancelamento')
+    return render(request, 'salas/listar_agendamentos_cancelados.html', {'cancelados': cancelados})
 
 
 
