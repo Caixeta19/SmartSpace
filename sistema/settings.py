@@ -91,15 +91,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'templates' / 'static']
-STATIC_ROOT = 'var/www/smartspace4R/static/'  # para coleta de arquivos estáticos na produção
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media files (uploads)
-
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/www/smartspace4R/media'  # pasta para salvar imagens enviadas
-
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Login URL (página de login)
 
