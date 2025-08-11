@@ -93,22 +93,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-<<<<<<< HEAD
+
 STATICFILES_DIRS = [BASE_DIR / 'templates' / 'static']
 STATIC_ROOT = 'static/'  # para coleta de arquivos estáticos na produção
-=======
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
->>>>>>> db61653f3e370faab52e45e6d97ecf2d8811e79d
+
 
 # Media files (uploads)
 MEDIA_URL = '/media/'
-<<<<<<< HEAD
 MEDIA_ROOT = '/media'  # pasta para salvar imagens enviadas
 
-=======
 MEDIA_ROOT = BASE_DIR / "media"
->>>>>>> db61653f3e370faab52e45e6d97ecf2d8811e79d
+
 
 # Login URL (página de login)
 
