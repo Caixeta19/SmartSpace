@@ -10,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-2(*4_wyl!_*o(-yi1s2)eg59c7x#n9$m@9g@dkq950v(k#6$59'
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['smartspace4R.com', 'www.smartspace4R.com','92.113.34.52','localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -93,12 +93,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'templates' / 'static']
-STATIC_ROOT = 'var/www/smartspace4R/static/'  # para coleta de arquivos estáticos na produção
+STATIC_ROOT = 'static/'  # para coleta de arquivos estáticos na produção
 
 # Media files (uploads)
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/www/smartspace4R/media'  # pasta para salvar imagens enviadas
+MEDIA_ROOT = '/media'  # pasta para salvar imagens enviadas
 
 
 # Login URL (página de login)
