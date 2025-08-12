@@ -10,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-2(*4_wyl!_*o(-yi1s2)eg59c7x#n9$m@9g@dkq950v(k#6$59'
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['4redes.com.br', 'www.4redes.com.br','177.154.191.240', 'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
