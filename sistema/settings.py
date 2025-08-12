@@ -10,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-2(*4_wyl!_*o(-yi1s2)eg59c7x#n9$m@9g@dkq950v(k#6$59'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['4redes.com.br', 'www.4redes.com.br','177.154.191.240', 'localhost']
 
 
 # Application definition
@@ -92,7 +92,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
+STATIC_URL = '/salas/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'templates' / 'static']
 STATIC_ROOT = 'static/'  # para coleta de arquivos estáticos na produção
@@ -101,7 +101,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Media files (uploads)
-MEDIA_URL = '/media/'
+MEDIA_URL = '/salas/media/'
 MEDIA_ROOT = '/media'  # pasta para salvar imagens enviadas
 
 MEDIA_ROOT = BASE_DIR / "media"
