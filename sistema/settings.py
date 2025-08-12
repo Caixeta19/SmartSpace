@@ -92,16 +92,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = '/salas/static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'templates' / 'static']
 STATIC_ROOT = 'static/'  # para coleta de arquivos estáticos na produção
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 
 # Media files (uploads)
-MEDIA_URL = '/salas/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = '/media'  # pasta para salvar imagens enviadas
 
 MEDIA_ROOT = BASE_DIR / "media"
