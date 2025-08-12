@@ -1,0 +1,473 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f0fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.3;
+}
+
+/* Header e Navegação */
+header {
+    width: 200px;
+    background: linear-gradient(180deg, #7309aa 0%, #4e0869 100%);
+    color: white;
+    padding: 2rem 1rem;
+    position: fixed;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(115, 9, 170, 0.2);
+    transition: width 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    margin-bottom: 1rem;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav ul li a i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+nav ul li a:hover {
+    background-color: #8b2bc5;
+}
+
+/* Botão hamburger */
+#menu-toggle {
+    font-size: 22px;
+    background-color: #ffffff;
+    color: #7309aa;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#menu-toggle:hover {
+    background-color: #e8d8fb;
+}
+
+/* Menu recolhido */
+header.fechar {
+    width: 60px;
+}
+
+header.fechar nav ul li a span {
+    display: none;
+}
+
+header.fechar nav ul li a i {
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Conteúdo Principal */
+main {
+    margin-left: 200px;
+    padding: 2rem;
+    flex-grow: 1;
+    background-color: #fdfcff;
+    transition: margin-left 0.3s ease;
+}
+
+header.fechar ~ main {
+    margin-left: 60px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #6d0aa9;
+    margin-top: 0;
+}
+
+/* Listagem de Salas */
+.salas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sala-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sala-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(128, 90, 213, 0.3);
+}
+
+.sala-header {
+    background: linear-gradient(135deg, #5e0682 0%, #8f31c3 100%);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.sala-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.sala-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza imagem, texto e botão */
+    justify-content: center;
+    gap: 1rem;
+}
+
+.sala-body p {
+    font-size: 1.1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.sala-body p i {
+    color: #7d1fae;
+    margin-right: 0.5rem;
+}
+
+/* Detalhes da Sala */
+.sala-detalhes {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sala-content {
+    padding: 2rem;
+}
+
+.sala-imagem {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.sala-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Agendamentos */
+.agendamentos {
+    margin-top: 2rem;
+}
+
+.agendamentos h2 {
+    border-bottom: 2px solid #dec7fa;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.agendamentos h2 i {
+    margin-right: 0.5rem;
+    color: #701486;
+}
+
+.agendamentos-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.agendamentos-lista li {
+    background: #f5f0fc;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.agendamentos-lista li:hover {
+    background: #e5d9fa;
+}
+
+.data {
+    font-weight: bold;
+    color: #7e0aa3;
+}
+
+.horario {
+    color: #6c757d;
+}
+
+.responsavel {
+    font-style: italic;
+    color: #495057;
+}
+
+.sem-agendamentos {
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+/* Botões */
+.btn {
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #6b10a1;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #8a38c4;
+}
+
+.btn-success {
+    background-color: #9b30f2;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #7c25c1;
+}
+
+.btn-danger {
+    background-color: #c9184a;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #a1133b;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.btn-secondary {
+    background-color: #d4b2fa;
+    color: #510d7a;
+}
+
+.btn-agendar {
+    background-color: #68159a;
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-agendar:hover {
+    background-color: #863fc3;
+    border-color: #68159a;
+    box-shadow: 0 4px 10px rgba(115, 9, 170, 0.3);
+}
+
+/* Formulários */
+form {
+    margin-top: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #7416ab;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #8c3cc2;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Centralizar botão do formulário */
+form button,
+form input[type="submit"] {
+    display: block;
+    margin: 1rem auto 0 auto;
+}
+
+/* Tabelas */
+table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+table th,
+table td {
+    padding: 1rem;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+table th {
+    background-color: #6e12a3;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f3ebfd;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    header {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    nav ul.active {
+        display: flex;
+        align-items: center;
+    }
+
+    .hamburger-button {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .salas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .agendamentos-lista li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .agendamentos-lista li span {
+        margin-bottom: 0.3rem;
+    }
+}
+
+/* Página de Confirmação de Exclusão */
+.confirmacao-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.confirmacao-container h1 {
+    color: #7415b1;
+    margin-bottom: 1.5rem;
+}
+
+.confirmacao-container p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.confirmacao-container form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
