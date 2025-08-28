@@ -1,14 +1,14 @@
-<!-- Botão hamburger -->
-<button id="menu-toggle" class="menu-btn" onclick="toggleMenu()">☰</button>
+    <!-- Botão hamburger -->
+    <button id="menu-toggle" class="menu-btn" onclick="toggleMenu()">☰</button>
 
-<!-- Navbar -->
-<div id="navbar" class="navbar">
-    <nav>
-        <ul>
-            <li><a class="nav-link" href="{% url 'listar_salas' %}"><i class="fas fa-door-open"></i> Salas</a></li>
-            <li><a class="nav-link" href="{% url 'listar_agendamentos' %}"><i class="fas fa-calendar-check"></i> Agendamentos</a></li>
-            <li><a class="nav-link" href="{% url 'listar_meus_agendamentos' %}"><i class="fas fa-user-check"></i> Meus Agendamentos</a></li>
-            <li><a class="nav-link" href="{% url 'agendamentos_cancelados' %}"><i  class="fas fa-calendar-xmark"></i> Agendamentos Cancelados</a></li>
-        </ul>
-    </nav>
-</div>
+    <!-- Navbar -->
+    <div id="navbar" class="navbar">
+        <nav>
+            <ul>
+                <li><a class="nav-link" href="{% url 'listar_salas' %}"><i class="fas fa-door-open"></i> Salas</a></li>
+                <li><a class="nav-link" href="{% url 'listar_agendamentos' %}"><i class="fas fa-calendar-check"></i> Agendamentos</a></li>
+                <li><a class="nav-link" href="{% url 'listar_meus_agendamentos' %}"><i class="fas fa-user-check"></i> Meus Agendamentos</a></li>
+                <li><a class="nav-link" href="{% url 'agendamentos_cancelados' %}"><i  class="fas fa-calendar-xmark"></i> Agendamentos Cancelados</a></li>
+            </ul>
+        </nav>
+    </div>

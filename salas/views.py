@@ -108,9 +108,6 @@ def listar_agendamentos_cancelados(request):
     cancelados = AgendamentoCancelado.objects.select_related('sala', 'solicitante').order_by('-data_cancelamento')
     return render(request, 'salas/listar_agendamentos_cancelados.html', {'cancelados': cancelados})
 
-
-
-
 @login_required
 def gerenciar_sala(request):
     if request.user.groups.filter(name="equipe").exists():

@@ -471,3 +471,24 @@ table tr:nth-child(even) {
     gap: 1rem;
     flex-wrap: wrap;
 }
+.btn-sair-main {
+    position: fixed; /* fixa na tela */
+    top: 20px;       /* distância do topo */
+    right: 20px;     /* distância da borda direita */
+    color: #fff;
+    background-color: #e74c3c;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 1000;   /* fica acima dos cards */
+}
+
+.btn-sair-main:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+

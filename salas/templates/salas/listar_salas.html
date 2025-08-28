@@ -3,7 +3,12 @@
 
 {% block content %}
 <div class="container">
+      <a href="{% url 'sair' %}" class="btn-sair-main">
+        <i class="fas fa-sign-out-alt"></i> Sair
+    </a>
     <h1>Salas Disponíveis</h1>
+   
+
 
     <div class="salas-grid">
         {% for sala in salas %}
@@ -21,6 +26,7 @@
                     <img src="{% static 'salas/img/Sala 01.png' %}" alt="Imagem padrão da sala" style="max-width: 100%; height: auto;">
                 {% endif %}
                 <a href="{% url 'agendar_sala' sala.id %}" class="btn btn-primary">Agendar Sala</a>
+                
             </div>
         </div>
         {% endfor %}
