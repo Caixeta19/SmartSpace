@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{% static 'salas/css/salas.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<a href="{% url 'sair' %}" class="btn-sair-main">
+        <i class="fas fa-sign-out-alt"></i> Sair
+    </a>
 <body>
     <header>
         {% include 'includes/navbar.html' %}
