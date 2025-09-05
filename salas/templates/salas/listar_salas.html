@@ -2,14 +2,13 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-      <a href="{% url 'sair' %}" class="btn-sair-main">
+
+ <a href="{% url 'sair' %}" class="btn-sair-main">
         <i class="fas fa-sign-out-alt"></i> Sair
     </a>
+<div class="container">
     <h1>Salas Disponíveis</h1>
    
-
-
     <div class="salas-grid">
         {% for sala in salas %}
         <div class="sala-card">
